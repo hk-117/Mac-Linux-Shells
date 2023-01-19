@@ -1,2 +1,2 @@
-# RHEL-configs
-Common and Necessary RedHat Enterprise Linux configurations
+# SHELL-configs
+Common and Necessary Mac and Linux configurations

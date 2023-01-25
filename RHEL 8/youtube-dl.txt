@@ -1,0 +1,8 @@
+youtube-dl is a perfect command line software to download Youtube and any other online videos.
+
+just install using snap on RHEL/UBUNTU
+
+the give the command:
+youtube-dl (video link)
+
+wulalaaaa your video is downloaded!!!

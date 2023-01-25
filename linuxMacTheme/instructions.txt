@@ -1,0 +1,19 @@
+#Install gnome-tweaks
+sudo apt/yum install gnome-tweaks
+
+#Download Attached Zip file
+
+To view hidden(begins with .) files and folders (ctrl+h)
+
+Then:
+1.Create (.themes) directory at /home/(user=your username)
+2.Extract themes at that folder
+3.Create (.icons) directory at /home/(user=your username)
+4.Extract icons at that folder
+5.Create (.fonts) directory at /home/(user=your username)
+6.Extract fonts at that folder
+7.Install dash-to-dock extension/plank dock system
+
+After that:
+1.Go to gnome-tweaks
+2.Make changes according to your need.

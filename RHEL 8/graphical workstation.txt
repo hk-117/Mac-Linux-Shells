@@ -1,0 +1,3 @@
+sudo yum groupinstall workstation
+systemctl set-default graphical.target
+systemctl isolate graphical

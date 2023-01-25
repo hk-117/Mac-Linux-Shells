@@ -1,0 +1,14 @@
+1. sudo apt update
+2. sudo apt upgrade
+3. sudo apt install build-essential
+4. sudo apt install xclip
+5. sudo apt install vim
+6. sudo apt install tree
+7. sudo apt install vlc
+8. sudo apt install kazam (Screen Recorder)
+9. sudo apt install cheese (Camera)
+10.sudo apt install gimp
+11.sudo apt install inkscape
+12.sudo apt install blender
+13.sudo apt install shotcut
+14.sudo apt install youtube-dl

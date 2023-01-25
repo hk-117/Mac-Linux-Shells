@@ -1,0 +1,14 @@
+1. sudo apt install git
+
+Uses of Git:
+1. git init projectname
+2. cd projectname
+3. git add .
+4. git commit -m "Comments"
+
+To github:
+1. git remote add origin "git directory url"
+2. git push -u origin master (or you can use any branch)
+3. give username and password
+
+Done

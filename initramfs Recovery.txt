@@ -1,0 +1,11 @@
+If your system fails to load and shows the message...
+' run fsck MANUALLY ' 
+then...
+
+type the command:
+fsck /dev/sda5
+
+sda5/sda6 depends on the disk failure label
+
+And press 'y' at every prompt
+that's it !!!

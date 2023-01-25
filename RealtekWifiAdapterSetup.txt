@@ -1,0 +1,20 @@
+0bda:f179 Realtek Semiconductor Corp Wifi Adapter Driver Setup:
+
+
+For Kernel 4.15 ~ 4.20 (Linux Mint or Ubuntu Derivatives)
+
+Commands:
+
+1. sudo apt-get install build-essential git dkms linux-headers-$(uname -r)
+
+2. git clone https://github.com/kelebek333/rtl8188fu
+
+3. sudo dkms add ./rtl8188fu
+
+4. sudo dkms build rtl8188fu/1.0
+
+5. sudo dkms install rtl8188fu/1.0
+
+6. sudo cp ./rtl8188fu/firmware/rtl8188fufw.bin /lib/firmware/rtlwifi/
+
+7. sudo rm -r rtl8188fu

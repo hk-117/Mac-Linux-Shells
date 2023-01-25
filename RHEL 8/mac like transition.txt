@@ -1,0 +1,5 @@
+Need Shell Extensions:
+1. Compiz alike magic lamp effect
+2. Compiz alike windows effect
+3. Compiz windows effect
+4. Dash to Dock

@@ -1,0 +1,16 @@
+Steps:
+1.Install ADB
+  --> debian: sudo apt install android-tools-adb
+  --> fedora: sudo yum install android-tools
+2.Install Scrcpy
+  --> sudo apt install scrcpy
+  --> sudo snap install scrcpy
+3.Android 5+ is required. 
+  Turn on developer options.
+  Turn on usb debugging. 
+  Turn on security Settings usb debugging.
+4. Connect phone via usb cable
+5. Run 'scrcpy' command on Terminal
+
+That's it...!!!
+Control your phone now...:)

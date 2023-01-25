@@ -1,0 +1,29 @@
+01.Bottles
+02.Boxes
+03.drawio
+04.Freetube
+05.GIMP
+06.GoldenDict
+07.GParted
+08.InkScape
+09.Kile
+10.Okular
+11.OBS studio
+12.PDF arranger
+13.Shotcut
+14.Skype
+15.Telegram
+16.Transmission
+17.VLC
+18.Wike
+19.Office
+20.Zoom
+21.youtube-dl
+22.gedit
+23.gnome-tweaks
+24.audacity
+25.xclip
+26.tree
+27.PeaZIP
+28.ZIM
+29.VIM

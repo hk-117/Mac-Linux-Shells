@@ -2,7 +2,7 @@
 
 ## Opencv:
 
-**This is used for image processing**
+**These are used for image processing**
 
 - `pip install opencv-python`
 - `pip install dlib`

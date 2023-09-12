@@ -1,0 +1,10 @@
+1. mongo --host mongodb_host --port mongodb_port
+2. use admin
+3. db.createUser({
+      user: "username",
+      pwd: "password",
+      roles: [
+        { role: "readWrite", db: "databasename" },
+        { role: "read", db: "databasename" }
+      ]
+   })

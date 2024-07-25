@@ -1,0 +1,138 @@
+syntax on
+
+set noshowmatch
+set relativenumber
+set nohlsearch
+set hidden
+set noerrorbells
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set nu
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set scrolloff=8
+set modifiable
+set rtp+=/usr/local/opt/fzf
+set re=2
+set cmdheight=2
+set updatetime=50
+set shortmess+=c
+
+"--------------------------------"
+let mapleader = "\<space>"
+inoremap <C-c> <esc>
+nnoremap ; :
+" quick-save
+nmap <leader>w :w<CR>
+" close buffer without changing window layout
+nnoremap :: :bp\|bd #<CR>
+
+" Moving lines up or down preserving format {
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==gi
+inoremap <C-k> <esc>:m .-2<CR>==gi
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+" }
+
+" select everything {
+nnoremap <C-A> ggVG
+" }
+
+"Comment {
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
+" }
+
+" Fugitive {
+function! ToggleGStatus()
+    if buflisted(bufname('.git/index'))
+        bd .git/index
+    else
+            vertical Git | vertical resize 40
+    endif
+endfunction
+command ToggleGStatus :call ToggleGStatus()
+nmap <S-t> :ToggleGStatus<CR>
+nmap <leader>gj :Gdiff<CR>
+nmap <leader>gf :diffget //2<CR>
+" }
+"--------------------------------"
+
+map <C-n> :NERDTreeToggle<CR>
+map <C-p> :Files<CR>
+map <C-f> :Rg<CR>
+map <C-t> :e <cfile><cr>
+map <S-Tab> :bn<CR>
+map <S-p> :bp<CR>
+map <F5> :setlocal spell! spelllang=en_us<CR>
+
+let loaded_matchparen = 1
+
+" CoC
+" GoTo code navigation.
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <leader>g] <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
+nnoremap <leader>cr :CocRestart
+
+" Sweet Sweet FuGITive
+nmap <leader>gj :Gdiff<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
+
+" Search and replace hotkey
+nnoremap H :%s//gc<left><left><left>
+
+" Import plugins
+if filereadable(expand("~/.vimrc.plug"))
+    source ~/.vimrc.plug
+endif
+
+" Status bar config
+set statusline+=%#warningmsg#
+
+" Fix files automatically on save
+let g:ale_fixers = {}
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_linters = {
+  \'javascript': ['eslint'],
+  \'vue': ['eslint', 'stylelint', 'tsserver'],
+\}
+
+let g:ale_fixers = {
+  \'javascript': ['prettier', 'eslint'],
+  \'vue': ['eslint', 'stylelint'],
+\}
+
+let g:ale_linters_explicit = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_fix_on_save = 1
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+autocmd BufWritePre * :call TrimWhitespace()
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)

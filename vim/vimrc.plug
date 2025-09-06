@@ -35,13 +35,21 @@ Plug 'ap/vim-buftabline'
 " Prisma
 Plug 'prisma/vim-prisma'
 
-" Laravel
-Plug 'yaegassy/coc-laravel', {'do': 'yarn install --frozen-lockfile'}
+" JSX
+Plug 'maxmellon/vim-jsx-pretty'
 
-" Intelephense
-Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
+" Copilot
+Plug 'github/copilot.vim'
+
+" Copilot Chat
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim'
 
 call plug#end()
 
 set background=dark
 colorscheme gruvbox
+
+lua << EOF
+require("CopilotChat").setup()
+EOF

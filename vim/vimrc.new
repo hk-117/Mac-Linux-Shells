@@ -20,13 +20,13 @@ set scrolloff=8
 set modifiable
 set rtp+=/usr/local/opt/fzf
 set re=2
-set cmdheight=2
+set cmdheight=1
 set updatetime=50
 set shortmess+=c
 
 "--------------------------------"
 let mapleader = "\<space>"
-inoremap <C-c> <esc>
+inoremap jj <esc>
 nnoremap ; :
 " quick-save
 nmap <leader>w :w<CR>
@@ -97,6 +97,10 @@ nmap <leader>gs :G<CR>
 " Search and replace hotkey
 nnoremap H :%s//gc<left><left><left>
 
+" Windows left right
+nnoremap <leader>wr :wincmd L<CR>
+nnoremap <leader>wl :wincmd H<CR>
+
 " Import plugins
 if filereadable(expand("~/.vimrc.plug"))
     source ~/.vimrc.plug
@@ -124,13 +128,6 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_fix_on_save = 1
 
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
-
-autocmd BufWritePre * :call TrimWhitespace()
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
